@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Race Game - Multiplayer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏃 Men's Race Game</h1>
+            <p>Compete in Real-Time Multiplayer Racing</p>
+        </header>
+        
+        <div class="game-section">
+            <div class="lobby">
+                <h2>Race Lobby</h2>
+                <div class="player-setup">
+                    <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
+                    <button onclick="joinGame()">Join Race</button>
+                </div>
+                <div id="playersList" class="players-list">
+                    <h3>Players in Lobby:</h3>
+                    <ul id="playersUL"></ul>
+                </div>
+                <button id="startBtn" onclick="startRace()" disabled>Start Race (Admin)</button>
+            </div>
+
+            <div class="game-container">
+                <canvas id="gameCanvas" width="1000" height="500"></canvas>
+                <div id="gameUI" class="game-ui" style="display:none;">
+                    <div class="player-info" id="playerInfo"></div>
+                    <div id="raceStatus"></div>
+                </div>
+            </div>
+
+            <div class="results" id="resultsSection" style="display:none;">
+                <h2>Race Results</h2>
+                <ol id="resultsList"></ol>
+                <button onclick="resetGame()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
